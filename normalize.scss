@@ -3,6 +3,15 @@
 // This program is based on normalize.css
 // normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css
 
+
+// Configurations
+$normalize-ms: true;
+$normalize-webkit: true;
+$normalize-moz: true;
+
+$nmlz-ie9: false;
+$ios-safari-4-7: true;
+
 /**
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
@@ -10,10 +19,10 @@
 
 html {
   font-family: sans-serif; /* 1 */
-  @if $ovtr-browser-ms {
+  @if $normalize-ms {
       -ms-text-size-adjust: 100%; /* 2 */
   }
-  @if $ovtr-browser-webkit {
+  @if $normalize-webkit {
       -webkit-text-size-adjust: 100%; /* 2 */
   }
 }
@@ -37,38 +46,52 @@ body {
 
 article,
 aside,
-details, /* 1 */
 figcaption,
 figure,
 footer,
 header,
-main, /* 2 */
 menu,
 nav,
-section,
-summary { /* 1 */
+section {
   display: block;
 }
+
+@if $normalize-ms or $normalize-moz { /* 1 */
+    details,
+    summary {
+        display: block;
+    }
+}
+@if $normalize-ms {
+    main {
+        display: block;
+    }
+}
+
 
 /**
  * Add the correct display in IE 9-.
  */
-
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
+@if $nmlz-ie9 {
+    audio,
+    canvas,
+    progress,
+    video {
+        display: inline-block;
+    }
 }
+
 
 /**
  * Add the correct display in iOS 4-7.
  */
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
+@if $ios-safari-4-7 {
+    audio:not([controls]) {
+        display: none;
+        height: 0;
+    }
 }
+
 
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
