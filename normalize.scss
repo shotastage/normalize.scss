@@ -12,6 +12,18 @@ $normalize-moz: true;
 $nmlz-ie9: false;
 $ios-safari-4-7: true;
 
+
+// Browser support
+$chrome: true;
+$android-chrome: true;
+$safari: true;
+$ios-safari: true;
+$firefox: true;
+$mobile-firefox: true;
+
+$ie: true;
+$edge: true;
+
 /**
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
