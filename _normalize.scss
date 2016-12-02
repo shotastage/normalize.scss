@@ -35,7 +35,7 @@ html {
   @if $nlzr-ie-mobile {
     -ms-text-size-adjust: 100%; /* 3 */
   }
-  @if $safari-ios {
+  @if $nlzr-safari-ios {
     -webkit-text-size-adjust: 100%; /* 3 */
   }
 }
